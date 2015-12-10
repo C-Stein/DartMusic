@@ -23,12 +23,13 @@ get_header(); ?>
 		<h1><?php _e( 'Archives', 'custom' ); ?></h1>
 <!-- Standard Wordpress loop, reminds me of an ng-repeat in angular -->
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-<!-- for each post in the loop the <article> has the id of the post-->
+<!-- For each post in the loop the <article> has the id of the post-->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<!-- if a thumbnail exists, it displays and acts as a link to the article
+<!-- If a thumbnail exists, it displays and acts as a link to the article
 if I were refactoring this code I would probably indent this line-line 34-->
 <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+<!-- This function grabs the featured image for a post to use as a thumbnail to use in a loop, like we have here.-->
 				<?php the_post_thumbnail(array(120,120)); ?>
 			</a>
 <?php endif; ?>
@@ -41,24 +42,30 @@ if I were refactoring this code I would probably indent this line-line 34-->
 time: Displays the time in the date format 'F j, Y' (ex: December 2, 2004), which could be used to replace the tag the_date().
 time2: Displays the time using the format parameter string 'g:i a' (ex: 10:36 pm).-->
 			<p class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></p>
-<!-- php_e translates text. first argument (here, "Published by") is the text to be translated and the second argument is optional and represents the domain to retrieve the translated text. I had to double-check and make sure this literally meant translating to a different language, which it does, and which is really cool-->
+<!-- php_e translates text. The first argument (here, "Published by") is the text to be translated and the second argument is optional and represents the domain to retrieve the translated text. I had to double-check and make sure this literally meant translating to a different language, which it does, and which is really cool.
+the_author_posts_link() Displays a link to all posts by an author.
+-->
 			<p class="author"><?php _e( 'Published by', 'custom' ); ?> <?php the_author_posts_link(); ?></p>
+<!-- Displays a link to comments meant to be used in  a loop like the one we're in here-->
 			<p class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'custom' ), __( '1 Comment', 'custom' ), __( '% Comments', 'custom' )); ?></p>
-
+<!-- Displays an excerpt of the article, many details at https://codex.wordpress.org/Function_Reference/the_excerpt -->
 			<?php the_excerpt(); ?>
 
 		</article>
+<!-- End of our loop (list of articles)-->
 <?php endwhile; ?>
 
 <?php else: ?>
-
+<!-- This is what to display if there are no articles. This "else belongs to the "if" on line 25 -->
 		<article>
+		<!-- More translation!-->
 			<h2><?php _e( 'Sorry, nothing to display.', 'custom' ); ?></h2>
 		</article>
 
 <?php endif; ?>
 	</section>
 
+<!-- populates the sidebar-->
 	<?php get_sidebar(); ?>
 
 </div><!-- row -->
@@ -69,8 +76,12 @@ time2: Displays the time using the format parameter string 'g:i a' (ex: 10:36 pm
 <!--
 Resources:
 http://www.smashingmagazine.com/2015/04/building-custom-wordpress-archive-page/
+https://codex.wordpress.org/Function_Reference/the_post_thumbnail
 https://codex.wordpress.org/Function_Reference/the_time
 https://codex.wordpress.org/Function_Reference/_e
 https://make.wordpress.org/polyglots/handbook/
+https://codex.wordpress.org/Function_Reference/the_author_posts_link
+https://codex.wordpress.org/Function_Reference/comments_popup_link
+https://codex.wordpress.org/Function_Reference/the_excerpt
 
 -->
