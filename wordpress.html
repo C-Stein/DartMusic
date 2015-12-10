@@ -7,9 +7,16 @@ to "get the header"-->
 Below is a basic archive template for WordPress.
 
 1. Comment it to describe what the code is doing.
-2. Describe here what you would change, for semantics, for optimiation, or anything else.
-3. Assume each post has a custom field called "celebrity", to describe the celebrity the post was written about. Add the code needed to display the name of the celebrity with each post.
+- done
 
+2. Describe here what you would change, for semantics, for optimiation, or anything else.
+- I'm not very familiar with WordPress and I don't know anything yet about best practices. My only suggestion would be to indent the if...thumbnail code block to make it more readable.
+
+3. Assume each post has a custom field called "celebrity", to describe the celebrity the post was written about. Add the code needed to display the name of the celebrity with each post.
+- using http://codex.wordpress.org/Using_Custom_Fields,
+http://codex.wordpress.org/Template_Tags/the_meta, and 
+https://perishablepress.com/wordpress-custom-fields-tutorial/
+I gave it my best shot on line 58
 */
 
 get_header(); ?>
@@ -26,7 +33,7 @@ get_header(); ?>
 <!-- For each post in the loop the <article> has the id of the post-->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <!-- If a thumbnail exists, it displays and acts as a link to the article
-if I were refactoring this code I would probably indent this line-line 34-->
+if I were refactoring this code I would probably indent this line-line 38-->
 <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 <!-- This function grabs the featured image for a post to use as a thumbnail to use in a loop, like we have here.-->
@@ -50,6 +57,9 @@ the_author_posts_link() Displays a link to all posts by an author.
 			<p class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'custom' ), __( '1 Comment', 'custom' ), __( '% Comments', 'custom' )); ?></p>
 <!-- Displays an excerpt of the article, many details at https://codex.wordpress.org/Function_Reference/the_excerpt -->
 			<?php the_excerpt(); ?>
+
+<!-- This is where I'm trying to display the celebrity topic of the post. It's my understanding that the meta data is already entered in as a key/value pair and will display as an unordered list-->
+			<?php the_meta(); ?>
 
 		</article>
 <!-- End of our loop (list of articles)-->
