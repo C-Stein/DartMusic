@@ -1,3 +1,5 @@
+<!-- I had to look around for ths opening tag. The code here seems 
+to "get the header"-->
 <?php
 
 /*
@@ -13,16 +15,18 @@ Below is a basic archive template for WordPress.
 get_header(); ?>
 
 
-
+<!-- These classes are either bootstrap, or something really similar-->
 <div class="row">
 	<section class="col col-sm-9 col-main" role="main">
 
+<!-- Main heading for the page generated dynamically through WordPress-->
 		<h1><?php _e( 'Archives', 'custom' ); ?></h1>
-
+<!-- Standard Wordpress loop, reminds me of an ng-repeat in angular -->
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
+<!-- for each post in the loop the <article> has the id of the post-->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<!-- if a thumbnail exists, it displays and acts as a link to the article
+if I were refactoring this code I would probably indent this line-line 34-->
 <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail(array(120,120)); ?>
@@ -30,10 +34,14 @@ get_header(); ?>
 <?php endif; ?>
 
 			<h2>
+			<!-- The title of the article also (just like the thumbnail) links to the article-->
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 			</h2>
-
+<!-- Date and time seem pretty self explanitory, but I hada to look up the arguments they accept
+time: Displays the time in the date format 'F j, Y' (ex: December 2, 2004), which could be used to replace the tag the_date().
+time2: Displays the time using the format parameter string 'g:i a' (ex: 10:36 pm).-->
 			<p class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></p>
+<!-- php_e translates text. first argument (here, "Published by") is the text to be translated and the second argument is optional and represents the domain to retrieve the translated text. I had to double-check and make sure this literally meant translating to a different language, which it does, and which is really cool-->
 			<p class="author"><?php _e( 'Published by', 'custom' ); ?> <?php the_author_posts_link(); ?></p>
 			<p class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'custom' ), __( '1 Comment', 'custom' ), __( '% Comments', 'custom' )); ?></p>
 
@@ -56,5 +64,13 @@ get_header(); ?>
 </div><!-- row -->
 
 
-
+<!-- Here we're pulling in the footer-->
 <?php get_footer(); ?>
+<!--
+Resources:
+http://www.smashingmagazine.com/2015/04/building-custom-wordpress-archive-page/
+https://codex.wordpress.org/Function_Reference/the_time
+https://codex.wordpress.org/Function_Reference/_e
+https://make.wordpress.org/polyglots/handbook/
+
+-->
