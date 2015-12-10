@@ -25,3 +25,10 @@ body {
 .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
   color: #3b86ce;
 }
+
+/*changing font-size and weight on an h2 instead of making it an h1 since 
+you should only have a single h1 on the page and there are 3 of these columns*/
+h2 {
+  font-size: 2.4em;
+  font-weight: bold;
+}

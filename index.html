@@ -42,9 +42,10 @@ The column layout (along with the request for responsiveness in #3) would make m
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
+              <!-- added some anchor tags so these links will take the user to particular columns in mobile view-->
+                <li><a href="#col1">Item 1</a></li>
+                <li><a href="#col2">Item 2</a></li>
+                <li><a href="#col3">Item 3</a></li>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -58,7 +59,7 @@ The column layout (along with the request for responsiveness in #3) would make m
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
           <div class="newsletter">
-            <h2>Join our newsletter</h2>
+            <h3>Join our newsletter</h3>
             <div class="form-inline">
               <input type="text" class="email form-control"placeholder="Email">
               <button class="btn btn-default active">Submit</button>
@@ -69,7 +70,7 @@ The column layout (along with the request for responsiveness in #3) would make m
       <div class="row">
         <div id="col1" class=" col col-md-4">
         <!--Adding an inner .column to get margins to appear since they're not supported by bootstrap. I thought this solution looked better than making each column a col-md-3 and offsetting the second and third columns -->
-          <div class="column">
+          <div class="column" id="col1">
             <h2>Column 1</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate velit sit amet porttitor euismod. Proin feugiat sapien et pretium sollicitudin. Aenean vitae aliquet tortor, iaculis vulputate erat. Vivamus sit amet auctor ante. Maecenas ac libero nibh. Sed quis est id lectus tristique vehicula eu sed eros. Nulla fermentum semper diam sed pellentesque.
 
@@ -77,7 +78,7 @@ The column layout (along with the request for responsiveness in #3) would make m
           </div>
         </div>
         <div id="col2" class="col col-md-4">
-          <div class="column">
+          <div class="column" id="col2">
             <h2>Column 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate velit sit amet porttitor euismod. Proin feugiat sapien et pretium sollicitudin. Aenean vitae aliquet tortor, iaculis vulputate erat. Vivamus sit amet auctor ante. Maecenas ac libero nibh. Sed quis est id lectus tristique vehicula eu sed eros. Nulla fermentum semper diam sed pellentesque.
 
@@ -85,7 +86,7 @@ The column layout (along with the request for responsiveness in #3) would make m
           </div>
         </div>
         <div id="col3" class="col col-md-4">
-          <div class="column">
+          <div class="column" id="col3">
             <h2>Column 3</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate velit sit amet porttitor euismod. Proin feugiat sapien et pretium sollicitudin. Aenean vitae aliquet tortor, iaculis vulputate erat. Vivamus sit amet auctor ante. Maecenas ac libero nibh. Sed quis est id lectus tristique vehicula eu sed eros. Nulla fermentum semper diam sed pellentesque.
 
