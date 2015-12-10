@@ -1,0 +1,21 @@
+{
+  "name": "html-js-wp-code-test",
+  "authors": [
+    "Caitlin Stein <caitlin.teter@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "grunt": "~0.4.5"
+  }
+}

@@ -1,0 +1,99 @@
+<!--
+
+// Html, Css test
+
+Explain and comment your work!
+
+1. Look at this page layout http://prntscr.com/9c99ds
+
+2. Explain here how you would approach building this page, and what challenges you see.
+
+The column layout (along with the request for responsiveness in #3) would make me lean towards using bootstrap or another framework. As far as challenges, I've never created a border on the body of a page before, but it seems like it would be straight forward. The biggest challenge for me would be finding the exact font since the screenshot is a picture (no checking dev tools for the font used) and I'm not really a font fanatic.
+
+3. Write the HTML and CSS code to render a page that looks like this. Please make it responsive.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="htmlpage.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HTML Test</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 newsletter">
+          <h2>Join our newsletter</h2>
+          <div class="form-inline">
+            <input type="text" class="email form-control"placeholder="Email">
+            <button class="btn btn-default active">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="col1" class=" col col-md-4">
+          <div class="column">
+            <h2>Column 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate velit sit amet porttitor euismod. Proin feugiat sapien et pretium sollicitudin. Aenean vitae aliquet tortor, iaculis vulputate erat. Vivamus sit amet auctor ante. Maecenas ac libero nibh. Sed quis est id lectus tristique vehicula eu sed eros. Nulla fermentum semper diam sed pellentesque.
+
+            Vestibulum id varius ante, nec mollis ex. Nulla maximus nisi eget luctus scelerisque. Praesent ultricies tortor purus, sit amet vehicula odio tincidunt vel. Donec et pulvinar nibh. Proin rhoncus odio ipsum, quis congue elit bibendum non. Fusce nec purus tincidunt, sollicitudin dolor at, congue mauris. Curabitur congue vulputate iaculis. Nulla ullamcorper consectetur iaculis. Maecenas sit amet aliquet nulla, a aliquet lectus. Ut ut ultrices dolor. Maecenas porta mattis diam, at rhoncus risus. Quisque placerat, velit a vestibulum imperdiet, mauris quam varius ex, hendrerit laoreet ex lacus luctus nisi.</p>
+          </div>
+        </div>
+        <div id="col2" class="col col-md-4">
+          <div class="column">
+            <h2>Column 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate velit sit amet porttitor euismod. Proin feugiat sapien et pretium sollicitudin. Aenean vitae aliquet tortor, iaculis vulputate erat. Vivamus sit amet auctor ante. Maecenas ac libero nibh. Sed quis est id lectus tristique vehicula eu sed eros. Nulla fermentum semper diam sed pellentesque.
+
+            Vestibulum id varius ante, nec mollis ex. Nulla maximus nisi eget luctus scelerisque. Praesent ultricies tortor purus, sit amet vehicula odio tincidunt vel. Donec et pulvinar nibh. Proin rhoncus odio ipsum, quis congue elit bibendum non. Fusce nec purus tincidunt, sollicitudin dolor at, congue mauris. Curabitur congue vulputate iaculis. Nulla ullamcorper consectetur iaculis. Maecenas sit amet aliquet nulla, a aliquet lectus. Ut ut ultrices dolor. Maecenas porta mattis diam, at rhoncus risus. Quisque placerat, velit a vestibulum imperdiet, mauris quam varius ex, hendrerit laoreet ex lacus luctus nisi.</p>
+          </div>
+        </div>
+        <div id="col3" class="col col-md-4">
+          <div class="column">
+            <h2>Column 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate velit sit amet porttitor euismod. Proin feugiat sapien et pretium sollicitudin. Aenean vitae aliquet tortor, iaculis vulputate erat. Vivamus sit amet auctor ante. Maecenas ac libero nibh. Sed quis est id lectus tristique vehicula eu sed eros. Nulla fermentum semper diam sed pellentesque.
+
+            Vestibulum id varius ante, nec mollis ex. Nulla maximus nisi eget luctus scelerisque. Praesent ultricies tortor purus, sit amet vehicula odio tincidunt vel. Donec et pulvinar nibh. Proin rhoncus odio ipsum, quis congue elit bibendum non. Fusce nec purus tincidunt, sollicitudin dolor at, congue mauris. Curabitur congue vulputate iaculis. Nulla ullamcorper consectetur iaculis. Maecenas sit amet aliquet nulla, a aliquet lectus. Ut ut ultrices dolor. Maecenas porta mattis diam, at rhoncus risus. Quisque placerat, velit a vestibulum imperdiet, mauris quam varius ex, hendrerit laoreet ex lacus luctus nisi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<!--
+
+4. If you do not know how, explain how you would figure it out.
+
+Extra credit if you use a framework or compiler
+
+-->

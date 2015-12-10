@@ -1,0 +1,11 @@
+.colorbox1 {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+.colorbox2 {
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+}
