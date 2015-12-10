@@ -6,16 +6,25 @@ body {
 .column {
   background-color: #ffffff;
   color: #323232;
+  font-size: 1.1em;
   border-radius: 5px;
   margin: 15px;
   padding: 15px;
+  /*I couldn't quite tell if there was a border on the model, but in the end
+  I thought it would look nice for the columns to match the styling of the 
+  email input*/
+  border: 1px solid #ccc;
 }
 
 .navbar {
   background-color: #ffffff;
   color: #3b86ce;
-  margin: 25px 145px 0 145px;
-
+  margin-top: 25px;
+  /*I went back and forth between using pixels or percentage on the 
+  side padding, but in the end, the pixels just didn't work well with 
+  the responsiveness*/
+  margin-left: 11%;
+  margin-right: 11%;
 }
 
 .newsletter {
@@ -24,6 +33,7 @@ body {
 
 .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
   color: #3b86ce;
+  font-size: 1.3em;
 }
 
 /*changing font-size and weight on an h2 instead of making it an h1 since 
